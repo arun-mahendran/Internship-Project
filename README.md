@@ -106,7 +106,7 @@ PROJECT/
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/arun-mahendran/Internship-Project.git
+git clone https://github.com/arun-mahendran/tunex-music-streaming-app.git
 cd tunex
 ```
 
