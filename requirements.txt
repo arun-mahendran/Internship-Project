@@ -6,3 +6,4 @@ python-dotenv
 Werkzeug
 requests
 mutagen
+google-generativeai
