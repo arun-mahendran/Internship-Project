@@ -5,6 +5,12 @@ The project demonstrates real-world full-stack concepts such as authentication, 
 
 The application focuses on practical implementation, seamless music streaming, and a clean user interface, making it suitable for learning and showcasing full-stack web development skills.
 
+## 🌐 Live Demo
+🔗 https://tunex-music-streaming-app.onrender.com
+
+⚠️ Note: The application is hosted on a free Render instance.  
+The first load may take up to 30–50 seconds due to cold start.
+
 ---
 
 ## 🚀 Features
@@ -102,6 +108,12 @@ PROJECT/
 
 ```
 
+## 🔐 Security Considerations
+- Passwords are securely hashed using Werkzeug (no plaintext storage)
+- Role-based access control enforced at route level
+- Admin routes protected from unauthorized access
+
+
 ## ⚙️ Installation & Setup
 
 ### 1️⃣ Clone the repository
@@ -144,14 +156,11 @@ python main.py
 Access the app at:
 http://127.0.0.1:5000
 
-## 🔐 Demo Admin Credentials (Local Use Only)
 
-Email: admin@tunex.com
+## 🔐 Admin Access
+Admin access is restricted for security reasons.
 
-Password: admin123
-
-⚠️ These credentials are for **local development and demo purposes only**.
-
+For evaluation or demonstration purposes, admin credentials can be provided upon request.
 
 
 ## 🎯 Learning Outcomes
@@ -166,6 +175,22 @@ Password: admin123
   
 ---
 
+## ⚠️ Deployment Limitation (Free Tier)
+
+This application is deployed on a free Render hosting plan.
+
+Due to the use of an ephemeral container on the free tier:
+- Application data stored using SQLite is **not persistent**
+- Registered users, uploaded songs, and playlists may reset after periods of inactivity or service restarts
+- Uploaded media files may not be retained across restarts
+
+This behavior is expected and does not reflect an issue with the application logic.
+
+🔧 **Production Consideration:**  
+For persistent data storage in a production environment, the application can be migrated to a managed PostgreSQL database and cloud-based storage for media files.
+
+---
+
 ## 📌 Future Enhancements
 - Global modal music player  
 - Time-synced lyrics display  
@@ -178,4 +203,4 @@ Password: admin123
 ## 🧑‍💻 Author
 **Arun Mahendran B**  
 Pre-final Year Engineering Student  
-Aspiring Full-Stack Developer
+Aspiring Full-Stack Developer 
