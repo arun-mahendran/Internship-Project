@@ -76,6 +76,36 @@
         text-decoration: none;
         font-weight: bold;
     }
+
+    .password-wrapper {
+        position: relative;
+    }
+
+    .password-wrapper input {
+        padding-right: 44px;
+    }
+
+    .toggle-password {
+        position: absolute;
+        right: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        opacity: 0.75;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .toggle-password:hover {
+        opacity: 1;
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    .toggle-password svg {
+        stroke: black; /* explicit black for clarity */
+    }
+
 </style>
 </head>
 
@@ -95,7 +125,19 @@
         </select>
         <input type="text" name="username" placeholder="Username" required>
         <input type="email" name="email" placeholder="Email" required>
-        <input type="password" name="password" placeholder="Password" required>
+        <div class="password-wrapper">
+            <input type="password" id="password" name="password" placeholder="Password" required>
+
+            <span class="toggle-password" onclick="togglePassword()">
+            <!-- Eye icon (closed by default) -->
+                <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                    viewBox="0 0 24 24" fill="none" stroke="black"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                </svg>
+            </span>
+        </div>
         <button type="submit">Register</button>
     </form>
 
@@ -113,6 +155,33 @@
             window.location.href = "/";
         }
     }
+
+    function togglePassword() {
+    const passwordInput = document.getElementById("password");
+    const eyeIcon = document.getElementById("eyeIcon");
+
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+
+        // Eye OFF (hidden)
+        eyeIcon.innerHTML = `
+            <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20
+                     C5 20 1 12 1 12a21.77 21.77 0 0 1 5.06-6.94"/>
+            <path d="M1 1l22 22"/>
+            <path d="M9.53 9.53A3.5 3.5 0 0 0 12 15.5
+                     a3.5 3.5 0 0 0 2.47-.97"/>
+        `;
+    } else {
+        passwordInput.type = "password";
+
+        // Eye ON (visible)
+        eyeIcon.innerHTML = `
+            <path d="M1 12s4-8 11-8 11 8 11 8
+                     -4 8-11 8S1 12 1 12z"/>
+            <circle cx="12" cy="12" r="3"/>
+        `;
+    }
+}
 </script>
 
 </body>

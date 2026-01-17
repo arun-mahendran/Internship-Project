@@ -23,7 +23,7 @@ app = Flask(__name__)
 app.config.from_object(Config)
 db.init_app(app)
 
-# Gemini Setup
+# =============== Gemini Setup ===============
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 if not os.getenv("GEMINI_API_KEY"):
