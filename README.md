@@ -108,6 +108,12 @@ PROJECT/
 
 ```
 
+## 🔐 Security Considerations
+- Passwords are securely hashed using Werkzeug (no plaintext storage)
+- Role-based access control enforced at route level
+- Admin routes protected from unauthorized access
+
+
 ## ⚙️ Installation & Setup
 
 ### 1️⃣ Clone the repository
