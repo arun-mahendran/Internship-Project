@@ -150,14 +150,11 @@ python main.py
 Access the app at:
 http://127.0.0.1:5000
 
-## 🔐 Demo Admin Credentials (Local Use Only)
 
-Email: admin@tunex.com
+## 🔐 Admin Access
+Admin access is restricted for security reasons.
 
-Password: admin123
-
-⚠️ These credentials are for **local development and demo purposes only**.
-
+For evaluation or demonstration purposes, admin credentials can be provided upon request.
 
 
 ## 🎯 Learning Outcomes
